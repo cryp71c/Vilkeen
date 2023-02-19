@@ -1,28 +1,34 @@
-base_exp_chance = 3
-player_level = 1
-enemy_level = 20
-
 """
  Every 10 levels your exp needed for the next level will be 1000*level
-
-
 """
-level = 2
-if (level%10)+1 == 0:
-    exp_needed = level*1000
-    print(exp_needed)
-else:
-    exp_needed = level*1000
-    print(exp_needed)
-# TODO:
-#   Level Cap Lower Level Mobs
-#
-#
+# level = 2
+# if (level%10)+1 == 0:
+#     exp_needed = level*1000
+#     print(exp_needed)
+# else:
+#     exp_needed = level*1000
+#     print(exp_needed)
 
-# while player_level < 100:
-#     exp_chance = base_exp_chance + (enemy_level - player_level) * (base_exp_chance/player_level)
-#     total_exp = (base_exp_chance*exp_chance)*10
-#     print("Player Level: ", player_level,", Exp Chance:", exp_chance, " Total EXP:", total_exp)
-#     player_level+=1
+item = {"drop_chance": 0.00025}
+times_killed = 100
+base_drop_chance = item['drop_chance']
+base_exp_chance = 3
+player_level = 25
+enemy_level = 3
 
 
+def exp_calc(bec, el, pl):
+    exp_chance = bec + (el - pl) * (bec / pl)
+    t_exp = (bec * exp_chance) * 10
+    print("Player Level:", player_level, " Enemy Level:", enemy_level, ", Exp Chance:", exp_chance, " Total EXP:",
+          t_exp)
+    return t_exp
+
+
+def drop_calc_enemy(bdc, el, pl, tk, t_exp):
+    dc = (0.0005 * pl + bdc * el + t_exp * (tk * 0.01)) - 1
+    print(dc)
+    return dc
+
+
+drop_chance = drop_calc_enemy(base_drop_chance, enemy_level, player_level, times_killed, exp_calc(base_exp_chance, enemy_level, player_level))
