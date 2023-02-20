@@ -1,5 +1,18 @@
+import os
+import main
+import pandas as pd
+
+
+
+from main import player_table
+
+# code_path = os.getcwd()
+# print(code_path)
+#
+#player_table = pd.read_excel(f"", sheet_name="player", index_col="id")
+
 """
- Every 10 levels your exp needed for the next level will be 1000*level
+Every 10 levels your exp needed for the next level will be 1000*level
 
 level = 2
 if (level%10)+1 == 0:
@@ -25,6 +38,9 @@ player = {
     "exp": 400,
     "level": 1,
 }
+
+# print(player_table)
+
 
 """
 def level_updater(exp, level):

@@ -1,18 +1,31 @@
 import pandas as pd
+import os
 import random
-from npcs import enemy
+
+
+
+
+
+code_path = -1
 
 debug = True
 
-weapons_table = pd.read_excel("data_table.xlsx", sheet_name="weapons", index_col="id")
-armor_table = pd.read_excel("data_table.xlsx", sheet_name="armor", index_col="id")
-enchants_table = pd.read_excel("data_table.xlsx", sheet_name="enchants", index_col="id")
-spells_table = pd.read_excel("data_table.xlsx", sheet_name="spells", index_col="id")
-effects_table = pd.read_excel("data_table.xlsx", sheet_name="effects", index_col="id")
-enemy_table = pd.read_excel("data_table.xlsx", sheet_name="enemies", index_col="id")
+
+
+player_table = pd.read_excel(f"{code_path}\\data_table.xlsx", sheet_name="player", index_col="id")
+weapons_table = pd.read_excel(f"{code_path}\\data_table.xlsx", sheet_name="weapons", index_col="id")
+enchants_table = pd.read_excel(f"{code_path}\\data_table.xlsx", sheet_name="enchants", index_col="id")
+armor_table = pd.read_excel(f"{code_path}\\data_table.xlsx", sheet_name="armor", index_col="id")
+spells_table = pd.read_excel(f"{code_path}\\data_table.xlsx", sheet_name="spells", index_col="id")
+effects_table = pd.read_excel(f"{code_path}\\data_table.xlsx", sheet_name="effects", index_col="id")
+chest_table = pd.read_excel(f"{code_path}\\data_table.xlsx", sheet_name="chest", index_col="id")
+enemy_table = pd.read_excel(f"{code_path}\\data_table.xlsx", sheet_name="enemies", index_col="id")
+boss_table = pd.read_excel(f"{code_path}\\data_table.xlsx", sheet_name="bosses", index_col="id")
+locations_table = pd.read_excel(f"{code_path}\\data_table.xlsx", sheet_name="locations", index_col="id")
 
 
 def enemy_generator():
+    from npcs import enemy
     random_enemy = enemy.generate_enemy(enemy_id=1)
     print(random_enemy.type)
 
