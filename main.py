@@ -1,7 +1,10 @@
 import json
 
 import pandas as pd
-pd.options.mode.chained_assignment = None  # default='warn'
+
+pd.set_option('display.max_columns', None)
+
+#pd.options.mode.chained_assignment = None  # default='warn'
 import os
 import random
 
@@ -63,9 +66,9 @@ def main():
     print(inventory)
     print("----------")
 
-    player_table['inventory'][save] = inventory
+    player_table.at[save, 'inventory'] = inventory
 
-    print(player_table.loc[[save]]['inventory'])
+    print(player_table)
     print("----------")
 
 
