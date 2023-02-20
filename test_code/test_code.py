@@ -26,13 +26,12 @@ player = {
     "level": 1,
 }
 
-
+"""
 def level_updater(exp, level):
     pass
-    """
+    
         if exp <= (level*1000):
             return(exp, level)
-    """
 
 
 def update_player(t_exp, ):
@@ -55,3 +54,4 @@ def drop_calc_enemy(bdc, el, pl, tk, t_exp):
 
 drop_chance = drop_calc_enemy(base_drop_chance, enemy_level, player_level, times_killed,
                               exp_calc(base_exp_chance, enemy_level, player_level))
+"""
