@@ -1,27 +1,24 @@
+import json
+
 import pandas as pd
+pd.options.mode.chained_assignment = None  # default='warn'
 import os
 import random
-
-
-
-
 
 code_path = -1
 
 debug = True
 
-
-
-player_table = pd.read_excel(f"{code_path}\\data_table.xlsx", sheet_name="player", index_col="id")
-weapons_table = pd.read_excel(f"{code_path}\\data_table.xlsx", sheet_name="weapons", index_col="id")
-enchants_table = pd.read_excel(f"{code_path}\\data_table.xlsx", sheet_name="enchants", index_col="id")
-armor_table = pd.read_excel(f"{code_path}\\data_table.xlsx", sheet_name="armor", index_col="id")
-spells_table = pd.read_excel(f"{code_path}\\data_table.xlsx", sheet_name="spells", index_col="id")
-effects_table = pd.read_excel(f"{code_path}\\data_table.xlsx", sheet_name="effects", index_col="id")
-chest_table = pd.read_excel(f"{code_path}\\data_table.xlsx", sheet_name="chest", index_col="id")
-enemy_table = pd.read_excel(f"{code_path}\\data_table.xlsx", sheet_name="enemies", index_col="id")
-boss_table = pd.read_excel(f"{code_path}\\data_table.xlsx", sheet_name="bosses", index_col="id")
-locations_table = pd.read_excel(f"{code_path}\\data_table.xlsx", sheet_name="locations", index_col="id")
+player_table = pd.read_excel(f"data_table.xlsx", sheet_name="player", index_col="id")
+weapons_table = pd.read_excel(f"data_table.xlsx", sheet_name="weapons", index_col="id")
+enchants_table = pd.read_excel(f"data_table.xlsx", sheet_name="enchants", index_col="id")
+armor_table = pd.read_excel(f"data_table.xlsx", sheet_name="armor", index_col="id")
+spells_table = pd.read_excel(f"data_table.xlsx", sheet_name="spells", index_col="id")
+effects_table = pd.read_excel(f"data_table.xlsx", sheet_name="effects", index_col="id")
+chest_table = pd.read_excel(f"data_table.xlsx", sheet_name="chest", index_col="id")
+enemy_table = pd.read_excel(f"data_table.xlsx", sheet_name="enemies", index_col="id")
+boss_table = pd.read_excel(f"data_table.xlsx", sheet_name="bosses", index_col="id")
+locations_table = pd.read_excel(f"data_table.xlsx", sheet_name="locations", index_col="id")
 
 
 def enemy_generator():
@@ -53,7 +50,23 @@ def print_table():
 
 
 def main():
-    enemy_generator()
+    # enemy_generator()
+
+    save = 1
+
+    inventory = json.loads(player_table['inventory'][save])
+    print(inventory)
+    print("----------")
+
+    inventory['weapons'] = [1]
+
+    print(inventory)
+    print("----------")
+
+    player_table['inventory'][save] = inventory
+
+    print(player_table.loc[[save]]['inventory'])
+    print("----------")
 
 
 if __name__ == '__main__':

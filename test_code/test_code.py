@@ -2,15 +2,6 @@ import os
 import main
 import pandas as pd
 
-
-
-from main import player_table
-
-# code_path = os.getcwd()
-# print(code_path)
-#
-#player_table = pd.read_excel(f"", sheet_name="player", index_col="id")
-
 """
 Every 10 levels your exp needed for the next level will be 1000*level
 
@@ -24,25 +15,26 @@ else:
 
 """
 
-item = {"drop_chance": 0.00025}
-times_killed = 100
-base_drop_chance = item['drop_chance']
-base_exp_chance = 3
-player_level = 25
-enemy_level = 3
+# item = {"drop_chance": 0.00025}
+# times_killed = 100
+# base_drop_chance = item['drop_chance']
+# base_exp_chance = 3
+# player_level = 25
+# enemy_level = 3
 
-player = {
-    "name": "Emily",
-    "class": "Warlock",
-    "status": "Middle Class",
-    "exp": 400,
-    "level": 1,
-}
-
-# print(player_table)
+# player = {
+#     "name": "Emily",
+#     "class": "Warlock",
+#     "status": "Middle Class",
+#     "exp": 400,
+#     "level": 1,
+# }
 
 
 """
+Player exp and calc 
+
+
 def level_updater(exp, level):
     pass
     
