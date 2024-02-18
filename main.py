@@ -1,27 +1,23 @@
-import json
-
+import os, re, json
 import pandas as pd
+
+program_path = os.path.dirname(os.path.realpath(__file__))
+data_table_path = f"{program_path}\\data_table.xlsx" if os.name == 'nt' else f"{program_path}/data_table.xlsx"
 
 pd.set_option('display.max_columns', None)
 
-#pd.options.mode.chained_assignment = None  # default='warn'
-import os
-import random
-
-code_path = -1
-
 debug = True
 
-player_table = pd.read_excel(f"data_table.xlsx", sheet_name="player", index_col="id")
-weapons_table = pd.read_excel(f"data_table.xlsx", sheet_name="weapons", index_col="id")
-enchants_table = pd.read_excel(f"data_table.xlsx", sheet_name="enchants", index_col="id")
-armor_table = pd.read_excel(f"data_table.xlsx", sheet_name="armor", index_col="id")
-spells_table = pd.read_excel(f"data_table.xlsx", sheet_name="spells", index_col="id")
-effects_table = pd.read_excel(f"data_table.xlsx", sheet_name="effects", index_col="id")
-chest_table = pd.read_excel(f"data_table.xlsx", sheet_name="chest", index_col="id")
-enemy_table = pd.read_excel(f"data_table.xlsx", sheet_name="enemies", index_col="id")
-boss_table = pd.read_excel(f"data_table.xlsx", sheet_name="bosses", index_col="id")
-locations_table = pd.read_excel(f"data_table.xlsx", sheet_name="locations", index_col="id")
+player_table = pd.read_excel(f"{data_table_path}", sheet_name="player", index_col="id")
+weapons_table = pd.read_excel(f"{data_table_path}", sheet_name="weapons", index_col="id")
+enchants_table = pd.read_excel(f"{data_table_path}", sheet_name="enchants", index_col="id")
+armor_table = pd.read_excel(f"{data_table_path}", sheet_name="armor", index_col="id")
+spells_table = pd.read_excel(f"{data_table_path}", sheet_name="spells", index_col="id")
+effects_table = pd.read_excel(f"{data_table_path}", sheet_name="effects", index_col="id")
+chest_table = pd.read_excel(f"{data_table_path}", sheet_name="chest", index_col="id")
+enemy_table = pd.read_excel(f"{data_table_path}", sheet_name="enemies", index_col="id")
+boss_table = pd.read_excel(f"{data_table_path}", sheet_name="bosses", index_col="id")
+locations_table = pd.read_excel(f"{data_table_path}", sheet_name="locations", index_col="id")
 
 
 def enemy_generator():
@@ -58,18 +54,18 @@ def main():
     save = 1
 
     inventory = json.loads(player_table['inventory'][save])
-    print(inventory)
-    print("----------")
+    # print(inventory)
+    # print("----------")
 
     inventory['weapons'] = [1]
 
-    print(inventory)
-    print("----------")
+    # print(inventory)
+    # print("----------")
 
     player_table.at[save, 'inventory'] = inventory
 
-    print(player_table)
-    print("----------")
+    # print(player_table)
+    # print("----------")
 
 
 if __name__ == '__main__':

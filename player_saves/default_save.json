@@ -1,0 +1,45 @@
+{
+  "player_name": "No Name",
+  "level":  1,
+  "experience" : 0,
+  "inventory": {
+    "weapons": [
+      {"item_id" : 1},
+      {"item_id" : 2}
+    ],
+    "armor": [
+      {"item_id" : 1},
+      {"item_id" : 2}
+    ],
+    "consumables": [
+      {"item_id" : 1},
+      {"item_id" : 2}
+    ],
+    "miscellaneous": [
+      {"item_id": 0, "quantity": 1},
+      {"item_id": 1, "quantity": 0}
+    ]
+  },
+  "spells": {
+  },
+  "skills": [
+    {"name": "One-Handed", "level": 0},
+    {"name": "Two-Handed", "level": 0},
+    {"name": "Archery", "level": 0},
+    {"name": "Block", "level": 0},
+    {"name": "Smithing", "level": 0},
+    {"name": "Heavy Armor", "level": 0},
+    {"name": "Light Armor", "level": 0},
+    {"name": "Sneak", "level": 0},
+    {"name": "Lock picking", "level": 0},
+    {"name": "Pickpocket", "level": 0},
+    {"name": "Speech", "level": 0},
+    {"name": "Alchemy", "level": 0},
+    {"name": "Illusion", "level": 0},
+    {"name": "Conjuration", "level": 0},
+    {"name": "Destruction", "level": 0},
+    {"name": "Restoration", "level": 0},
+    {"name": "Alteration", "level": 0},
+    {"name": "Enchanting", "level": 0}
+  ]
+}
